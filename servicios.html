@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/servicios.css">
+    <title>Servicios</title>
+</head>
+<body>
+   <!-- Navigation bar -->
+   <header class="header">
+    <!-- Logo -->
+    <a href="./index.html" class="logo">
+        <img src="./img/logo con diente blanco.png" alt="">
+    </a>
+    <!-- Hamburger icon -->
+    <input class="side-menu" type="checkbox" id="side-menu"/>
+    <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
+    <!-- Menu -->
+    <nav class="nav">
+        <ul class="menu">
+            <li class="li_personalizado"><img class="imagen_telefono" src="./img/392498_call_chat_communication_phone_phones_icon.svg" alt=""><a href="#">+34 654 777 876</a></li>
+            <li><a href="./index.html">INICIO</a></li>
+            <li><a href="./servicios.html">SERVICIOS</a> </li>
+            <li><a href="./nosotros.html">NOSOTROS</a></li>
+            <li><a class="reserva__btn" href="#" onclick="openModal()">RESERVA YA!</a></li>
+        </ul>
+    </nav>
+    <div class="modal__overlay" id="modalOverlay">
+        <div class="modal">
+          <form class="formulario__datoscliente">
+              <h3>Formulario de cita</h3>
+              <div class="input__form">
+                  <label for="nombre">Nombres*</label>
+                  <input type="text" id="nombre" placeholder="Nombre" required>
+              </div>
+
+              <div class="input__form">
+                  <label for="apellidos">Apellidos*</label>
+                  <input type="text" id="apellidos" placeholder="Apellidos" required>
+              </div>
+
+              <div class="input__form">
+                  <label for="correo">Email*</label>
+                  <input type="email" id="correo" placeholder="example@email.com" required>
+              </div>
+
+              <div class="input__form">
+                  <label for="fecha">Selecciona una fecha</label>
+                  <input type="date" id="fecha" placeholder="Selecciona fecha...">
+              </div>
+
+              <button class="btn__formulario">Solicitar cita</button>
+          </form>
+          <button class="close__btn" onclick="closeModal()"><img src="./img/close_modal.svg" alt=""></button>
+        </div>
+      </div>
+</header>
+
+    <main class="section__main">
+        <section class="secction__servicio_left">
+            <div class="container__imagen">
+                <img src="./img/servicio1.jpg" alt="">
+            </div>
+            <div class="secction_contenido_servicio">
+                <h2>ODONTOLOGIA</h2>
+                <p>Nos especializamos en el diagnóstico y prevención integral de las enfermedades que afectan el aparato estomatognático. Abordamos diversas patologías haciendo especial énfasis en la caries dental, la maloclusión y la enfermedad periodontal.</p>
+            </div>
+        </section>
+
+        <section class="secction__servicio_right">
+            <div class="secction_contenido_servicio">
+                <h2>ORTODONCIA</h2>
+                <p>Nos dedicamos al estudio de las anomalías de forma, posición, relación y función de las estructuras dentomaxilofaciales, corregimos los dientes apretados, irregulares o salientes, con una mayor preponderancia al aspecto dental y óseo.</p>
+            </div>
+            <div class="container__imagen">
+                <img src="./img/servicio2.jpg" alt="">
+            </div>
+        </section>
+
+        <section class="secction__servicio_left">
+            <div class="container__imagen">
+                <img src="./img/servicio3.jpg" alt="">
+            </div>
+            <div class="secction_contenido_servicio">
+                <h2>PERIODONCIA</h2>
+                <p>Trabajamos sobre las enfermedades que afectan a los tejidos que dan soporte a la encía, como el ligamento periodontal, cemento radicular y hueso alveolar, implantando substitutos, que mantiene la función y estética de los dientes y sus tejidos adyacentes.</p>
+            </div>
+        </section>
+
+        <section class="secction__servicio_right">
+            <div class="secction_contenido_servicio">
+                <h2>CIRUGIA DE IMPLANTES</h2>
+                <p>Reemplazamos los dientes perdidos, con implantes elaborados con materiales biocompatibles que no producen reacción de rechazo, su superficie con  diferentes recubrimientos que aumentar su adhesión conservando mayor cantidad de hueso alveolar.</p>
+            </div>
+            <div class="container__imagen">
+                <img src="./img/servicio4.jpg" alt="">
+            </div>
+        </section>
+    </main>
+    <!--Footer-->
+    <footer class="section__footer">
+        <div class="columns__container">
+            <div class="column__logo">
+                <img src="./img/logo con diente blanco.png" alt="">
+            </div>
+
+            <div class="column__contacto_info">
+                <h2>Información de contacto:</h2>
+                <p>Teléfono: +34 654 777 876</p>
+                <p>Email: example@email.com</p>
+                <p>Dirección: Direccion de ejemplo</p>
+                <h2>Encuentranos en:</h2>
+                <div class="column__social_network">
+                    <img src="./img/facebook.svg" alt="">
+                    <img src="./img/instagram.svg" alt="">
+                    <img src="./img/twitter.svg" alt="">
+                </div>
+            </div>
+            <div class="column__mapa">
+                <img src="./img/mapa.jpg" alt="">
+            </div>
+        </div>
+        <p>&copy; 2024 Clínica Dental CEMA. Todos los derechos reservados.</p>
+    </footer>
+
+<script src="./js/script.js"></script> 
+</body>
+</html>

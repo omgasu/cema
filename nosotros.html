@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/nosotros.css">
+    <title>Nosotros</title>
+</head>
+<body>
+    <!-- Navigation bar -->
+    <header class="header">
+        <!-- Logo -->
+        <a href="./index.html" class="logo">
+            <img src="./img/logo con diente blanco.png" alt="">
+        </a>
+        <!-- Hamburger icon -->
+        <input class="side-menu" type="checkbox" id="side-menu"/>
+        <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
+        <!-- Menu -->
+        <nav class="nav">
+            <ul class="menu">
+                <li class="li_personalizado"><img class="imagen_telefono" src="./img/392498_call_chat_communication_phone_phones_icon.svg" alt=""><a href="#">+34 654 777 876</a></li>
+                <li><a href="./index.html">INICIO</a></li>
+                <li><a href="./servicios.html">SERVICIOS</a> </li>
+                <li><a href="./nosotros.html">NOSOTROS</a></li>
+                <li><a class="reserva__btn" href="#" onclick="openModal()">RESERVA YA!</a></li>
+            </ul>
+        </nav>
+        <div class="modal__overlay" id="modalOverlay">
+            <div class="modal">
+              <form class="formulario__datoscliente">
+                  <h3>Formulario de cita</h3>
+                  <div class="input__form">
+                      <label for="nombre">Nombres*</label>
+                      <input type="text" id="nombre" placeholder="Nombre" required>
+                  </div>
+
+                  <div class="input__form">
+                      <label for="apellidos">Apellidos*</label>
+                      <input type="text" id="apellidos" placeholder="Apellidos" required>
+                  </div>
+
+                  <div class="input__form">
+                      <label for="correo">Email*</label>
+                      <input type="email" id="correo" placeholder="example@email.com" required>
+                  </div>
+
+                  <div class="input__form">
+                      <label for="fecha">Selecciona una fecha</label>
+                      <input type="date" id="fecha" placeholder="Selecciona fecha...">
+                  </div>
+
+                  <button class="btn__formulario">Solicitar cita</button>
+              </form>
+              <button class="close__btn" onclick="closeModal()"><img src="./img/close_modal.svg" alt=""></button>
+            </div>
+          </div>
+    </header>
+
+    <div class="sobrenosotros__container">
+        <h2>Sobre nosotros</h2>
+        <p>La Clínica Dental CEMA es un establecimiento especializado en odontología, ubicado en C. Monte Tabor, 10, en la ciudad de Sevilla. Con una amplia gama de servicios y atención personalizada, se ha convertido en una referencia en el sector para pacientes de todas las edades.
+            Con el objetivo de ofrecer una atención de calidad, la Clínica Dental CEMA cuenta con modernas instalaciones adaptadas a las necesidades de todos sus pacientes.
+            Para poder disfrutar de estos servicios, es necesario reservar una cita previa
+            La clínica cuenta con una ubicación privilegiada en la ciudad de Sevilla, y se puede consultar el mapa más abajo para conocer la localización exacta. Si necesita más información, no dude en ponerse en contacto con la clínica a través del número de teléfono +34 654 777 876 o visitando su página web</p>
+    </div>
+
+<section class="section">
+    <div class="slider__divcontainer">
+        <input type="radio" name="slider" id="slide1" checked>
+        <input type="radio" name="slider" id="slide2">
+        <input type="radio" name="slider" id="slide3">
+        <input type="radio" name="slider" id="slide4">
+        <div class="slides" id="slides">
+           <div class="overflow">
+              <div class="inner">
+                 <div class="slide slide_1">
+                    <div class="slide-content">
+                        <img class="slider-item" src="./img/galery/1fachada.jpg" alt="Imagen 1">
+                    </div>
+                 </div>
+                 <div class="slide slide_2">
+                    <div class="slide-content">
+                        <img class="slider-item" src="./img/galery/2recepcion.jpg" alt="Imagen 2">
+
+                    </div>
+                 </div>
+                 <div class="slide slide_3">
+                    <div class="slide-content">
+                        <img class="slider-item" src="./img/galery/3consulta.jpg" alt="Imagen 2">
+
+                    </div>
+                 </div>
+                 <div class="slide slide_4">
+                    <div class="slide-content">
+                        <img class="slider-item" src="./img/galery/4pediatria.jpg" alt="Imagen 2">
+                    </div>
+                 </div>
+              </div>
+           </div>
+        </div>
+        <div class="controls">
+           <label for="slide1"></label>
+           <label for="slide2"></label>
+           <label for="slide3"></label>
+           <label for="slide4"></label>
+        </div>
+        <div class="bullets">
+           <label for="slide1"></label>
+           <label for="slide2"></label>
+           <label for="slide3"></label>
+           <label for="slide4"></label>
+        </div>
+     </div>
+</section>
+
+<!--Footer-->
+<footer class="section__footer">
+    <div class="columns__container">
+        <div class="column__logo">
+            <img src="./img/logo con diente blanco.png" alt="">
+        </div>
+
+        <div class="column__contacto_info">
+            <h2>Información de contacto:</h2>
+            <p>Teléfono: +34 654 777 876</p>
+            <p>Email: example@email.com</p>
+            <p>Dirección: Direccion de ejemplo</p>
+            <h2>Encuentranos en:</h2>
+            <div class="column__social_network">
+                <img src="./img/facebook.svg" alt="">
+                <img src="./img/instagram.svg" alt="">
+                <img src="./img/twitter.svg" alt="">
+            </div>
+        </div>
+        <div class="column__mapa">
+            <img src="./img/mapa.jpg" alt="">
+        </div>
+    </div>
+    <p>&copy; 2024 Clínica Dental CEMA. Todos los derechos reservados.</p>
+</footer>
+    
+<script src="./js/script.js"></script>   
+</body>
+</html>
