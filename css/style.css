@@ -124,7 +124,6 @@ ul {
     height: 2px;
     position: relative;
     width: 24px;
-
 }
 
 /* Style span tag */
@@ -178,7 +177,7 @@ ul {
     font-weight: bolder;
 }
 
-/* Responsiveness */
+/* Responsives */
 @media (min-width: 1050px) {
     .nav {
         max-height: none;
@@ -384,7 +383,6 @@ ul {
     padding: 30px;
     border: 5px solid #262f40;
     border-radius: 20px;
-
 }
 
 .divdoctors__card {
@@ -775,7 +773,6 @@ ul {
         align-items: center;
         padding: 0;
         margin: 0;
-        
     }
 
     .column__logo>img {
