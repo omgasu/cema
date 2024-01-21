@@ -8,5 +8,10 @@ function closeModal() {
 }
 
 function sendForm(){
-  alert("Se ha sercervado su cita correctamente!")
+  document.getElementById("modalOverlay").style.display = "none";
+  alert("Se ha reservado su cita correctamente!")
+}
+
+function sendPhone(){
+  alert("Hemos recivido tu  número telefonico, te llamaremos en breve!")
 }
