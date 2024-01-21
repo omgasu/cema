@@ -7,11 +7,11 @@ function closeModal() {
   document.getElementById("modalOverlay").style.display = "none";
 }
 
-function sendForm(){
+function sendForm() {
   document.getElementById("modalOverlay").style.display = "none";
   alert("Se ha reservado su cita correctamente!")
 }
 
-function sendPhone(){
+function sendPhone() {
   alert("Hemos recivido tu  número telefonico, te llamaremos en breve!")
 }
