@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CEMA</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/nosotros.css">
+</head>
+
+<body>
+
+    <!-- ______________________________________ENCABEZADO______________________________________ -->
+    <!-- ENCABEZADO Y MENU -->
+    <header class="header">
+        <div class="header__divheader">
+
+            <!-- Logo -->
+            <a href="../index.html">
+                <img class="header__imglogo" src="../img/logo_blanco.svg" alt="Logo de CEMA">
+            </a>
+
+            <!-- Icono Hamburguesa  -->
+            <input class="header__inputhamb" type="checkbox" id="idhambside" />
+            <label class="header__labelhamb" for="idhambside"><span class="header__spanhambline"></span></label>
+
+            <!-- Barra de navegación  -->
+            <nav class="header__nav">
+                <ul class="header__ulista">
+                    <li class="header__litem"><a class="header__alink" href="../index.html">INICIO</a></li>
+                    <li class="header__litem"><a class="header__alink" href="servicios.html">SERVICIOS</a> </li>
+                    <li class="header__litem"><a class="header__alink" href="nosotros.html">NOSOTROS</a></li>
+                    <li class="header__litem"><a class="header__alink" href="contacto.html">CONTACTO</a></li>
+                    <li class="header__litem header__litem--reserva"><a class="header__alink header__alink--reserva"
+                            href="#" onclick="abrirModal()">RESERVA YA!</a></li>
+                </ul>
+            </nav>
+
+            <!-- Formulario de Cita (Tipo Modal: definido en CSS/ position: fixed)-->
+            <div class="header__divcontdorform" id="modalOverlay"> <!-- Oscurecer div detrás del Modal-->
+                <div class="header__divformulario">
+                    <form class="header__formcita">
+                        <h3 class="header__h3titulo">Formulario de cita</h3>
+                        <div class="header__divdatosformulario">
+                            <label for="idnombre">Nombre*</label>
+                            <input class="header__inputnombre" type="text" id="idnombre" placeholder="Nombre" required>
+                        </div>
+                        <div class="header__divdatosformulario">
+                            <label for="idapellidos">Apellidos*</label>
+                            <input class="header__inputnombre" type="text" id="idapellidos" placeholder="Apellidos"
+                                required>
+                        </div>
+                        <div class="header__divdatosformulario">
+                            <label for="idcorreo">Email*</label>
+                            <input class="header__inputnombre" type="email" id="idcorreo"
+                                placeholder="example@email.com" required>
+                        </div>
+                        <div class="header__divdatosformulario">
+                            <input class="header__inputnombre" type="date" id="idfecha"
+                                placeholder="Selecciona fecha...">
+                        </div>
+                        <button class="header__btnformulario" type="button" onclick="enviarFormulario()">Solicitar
+                            cita</button>
+                    </form>
+                    <button class="header__btncerrar" onclick="cerrarModal()"><img class="header__imgbtncerrar"
+                            src="../img/icon_cerrar_modal.svg" alt="Cerrar formulario"></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- __________________________________________MAIN________________________________________ -->
+    <!-- Banner -->
+    <main>
+        <section>
+            <div class="sectionencabezado__divcontdor">
+                <h2 class="sectionencabezado__h2titulo">NOSOTROS</h2>
+            </div>
+
+        </section>
+        <!-- Sobre nosotros -->
+        <div class="nosotros__divcontdor">
+            <p>La Clínica Dental CEMA es un establecimiento de excelencia en odontología, ubicado en C. Monte Tabor, 10,
+                en
+                la ciudad de Sevilla. Ofrecemos Con una amplia gama de servicios dentales y una atención personalizada,
+                que
+                nos ha convertido en una
+                referencia en el sector para pacientes de todas las edades. <br> <br>
+                Nuestro objetivo ee ofrecer una atención de calidad. Por ello, la Clínica Dental CEMA cuenta con
+                modernas
+                instalaciones
+                adaptadas a las necesidades de cada paciente, garantizando una experiencia cómoda y segura. <br> <br>
+                La clínica está ubicada en una zona privilegiada de la ciudad, para conocer la localización exacta,
+                puede
+                consultar el mapa más
+                abajo. Si necesita más información, no dude en ponerse en contacto con nosotros a través del número de
+                teléfono +34 654 777 876 o mediante nuestro correo electrónico cema@email.com.</p>
+        </div>
+
+        <!-- Section igual a la seccion de Nuestros servicios -->
+        <section class="section">
+            <div class="slider__divcontdor">
+                <div class="slider__divimagenes">
+                    <img class="slider__imgcarrusel" id="idimagen1" src="../img/1carrusel.jpg" alt="Fachada CEMA">
+                    <img class="slider__imgcarrusel" id="idimagen2" src="../img/2carrusel.jpg" alt="Recepción">
+                    <img class="slider__imgcarrusel" id="idimagen3" src="../img/3carrusel.jpg" alt="Consulta">
+                    <img class="slider__imgcarrusel" id="idimagen4" src="../img/4carrusel.jpg" alt="Pediatría CEMA">
+                </div>
+                <div class="slider__divcontrol">
+                    <a class="slider__acontrol" href="#idimagen1"></a>
+                    <a class="slider__acontrol" href="#idimagen2"></a>
+                    <a class="slider__acontrol" href="#idimagen3"></a>
+                    <a class="slider__acontrol" href="#idimagen4"></a>
+                </div>
+            </div>
+
+            <!-- Whatssapp -->
+            <div class="sectionbanner__divwsp">
+                <span class="sectionbanner__spanumero">654 777 876</span>
+                <img class="sectionbanner__imgwsp" src="../img/icon_whatsapp.svg" alt="">
+            </div>
+
+        </section>
+
+        <!-- __________________________________________FOOTER________________________________________ -->
+        <footer class="footer">
+            <div class="footer__divcontdor">
+                <div class="footer__divlogo">
+                    <a href="../index.html">
+                        <!-- estilo del logo del header -->
+                        <img class="header__imglogo" src="../img/logo_blanco.svg" alt="Logo de CEMA">
+                    </a>
+                </div>
+                <div class="footer__divcontacto">
+                    <h2>Información de contacto:</h2>
+                    <p>Teléfono: +34 654 777 876</p>
+                    <p>Email: cema@email.com</p>
+                    <p>Dirección: C. Monte Tabor, 10, Sevilla, España</p>
+                    <h2>Encuéntranos en:</h2>
+                    <div class="footer__divredes">
+                        <img class="footer__imgred" src="../img/icon_facebook.svg" alt="Icono Facebook">
+                        <img class="footer__imgred" src="../img/icon_instagram.svg" alt="Icono Instagram">
+                        <img class="footer__imgred" src="../img/icon_twitter.svg" alt="Icono Twitter">
+                    </div>
+                </div>
+                <div class="footer__divmapa">
+                    <img class="footer__imgmapa" src="../img/mapa.jpg" alt="Mapa de ubicación de CEMA">
+                </div>
+            </div>
+            <p class="footer__pderechos">&copy; 2024 Clínica Dental CEMA. Todos los derechos reservados.</p>
+        </footer>
+
+        <script src="../js/script.js"></script>
+        <script src="../js/slider.js"></script>        
+
+</body>
+
+</html>

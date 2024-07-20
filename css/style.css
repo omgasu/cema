@@ -1,6 +1,28 @@
-/* Custom properties */
+/* RESET personalizado */
+
 :root {
-    font-family: Arial;
+    /* COLORES PRIMARIOS */
+    /* azul petroleo */
+    --primario-azul-petroleo: #3a758c;
+    /* marino oscuro */
+    --primario-azul-oscuro: #262f40;
+    /* hueso */
+    --primario-hueso: #f9f9f9;
+    /* azul claro */
+    --primario-azul-claro: #c4e1f2;
+    /* COLORES SECUNDARIOS */
+    /* verde claro */
+    --secundario-fondo-verde: #effff8;
+    /* gris */
+    --secundario-gris: #85888c;
+    /* gris claro*/
+    --secundario-gris-claro: #f2f2f2;
+    /* gris oscuro*/
+    --secundario-gris-oscuro: #C5D1D9;
+    /* COLORES RESALTADOS */
+    --resaltado-verde: #00ff00;
+    --resaltado-rojo: #ff0000;
+    --resaltado-naranja: #ff8400;
 }
 
 /* Margin y paddings de todas las etiquetas */
@@ -8,47 +30,24 @@
     margin: 0;
     padding: 0;
     border: 0;
-    -webkit-box-sizing: border-box;
+    /* compatibilidad con navegadores antiguos */
     box-sizing: border-box;
 }
 
-/* Imagenes */
-
-
-/* ... excepto las que se encuentran en párrafos */
-
-/* Quitar puntos de los <li> */
-
-
-/* Anclas suaves */
 html {
+    /* Efectos suaves */
     scroll-behavior: smooth;
 }
 
-/* Los SVG */
-svg {
-    width: 100%;
-    display: block;
-    fill: currentColor;
-}
-
+/* BODY - Altura mínima y color de fondo*/
 body {
     min-height: 100vh;
+    background-color: var(--secundario-fondo-verde);
+    /* fuente */
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-/* ____________________________________________ */
-
-/* BODY_____________________ */
-/*HEADER_____________________ */
-/* Estilos para pantallas grandes */
-:root {
-    --white: #f9f9f9;
-    --black: #262f40;
-    --gray: #85888C;
-}
-
-/* variables*/
-
+/* Quitar estilo y viñetas*/
 a {
     text-decoration: none;
 }
@@ -57,80 +56,85 @@ ul {
     list-style: none;
 }
 
-/* Header */
+/* ___________________________________ */
+
+/* ENCABEZADO Y MENU */
 .header {
-    background-color: var(--black);
-    box-shadow: 1px 1px 5px 0px var(--gray);
+    /* display: block; */
+    background-color: var(--primario-azul-oscuro);
+    box-shadow: 1px 1px 5px 0px var(--secundario-gris);
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 99999;
-}
-
-/* Logo */
-
-.logo>img {
-    display: inline-block;
-    width: 130px;
-    height: auto;
-    margin-left: 10%;
-    margin-top: 20px;
-}
-
-.nav {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    background-color: var(--black);
-    overflow: hidden;
-}
-
-.menu {
-    margin-right: 100px;
-}
-
-.li_personalizado {
+    height: 80px;
     display: flex;
+    justify-content: center;
     align-items: center;
 }
 
-.menu a {
+.header__divheader {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo */
+.header__imglogo {
+    display: inline-block;
+    width: 140px;
+    height: auto;
+}
+
+.header__nav {
+    width: 50%;
+    position: fixed;
+    overflow: hidden;
+    top: 80px;
+    right: 0;
+    background-color: rgba(38, 47, 64, 0.95);
+}
+
+.header__alink {
     display: block;
     padding: 30px;
-    color: var(--white);
+    /* background-color: rgba(38, 47, 64, 0.95); */
+    color: white;
+    color: var(--primario-hueso);
 }
 
-.menu a:hover {
-    background-color: var(--gray);
+.header__alink:hover {
+    color: white;
+    background-color: rgba(58, 117, 140, 0.95);
 }
 
-.nav {
+.header__nav {
     max-height: 0;
     transition: max-height .5s ease-out;
 }
 
-/* Menu Icon */
-.hamb {
+/* MENU HAMBURGUESA */
+.header__labelhamb {
     cursor: pointer;
     float: right;
     padding: 40px 20px;
 }
 
-/* Style label tag */
-
-.hamb-line {
-    background: var(--white);
+/* Estilo label (Barras Menú Hamburguesa) */
+.header__spanhambline {
+    background: var(--primario-hueso);
     display: block;
     height: 2px;
     position: relative;
     width: 24px;
 }
 
-/* Style span tag */
-
-.hamb-line::before,
-.hamb-line::after {
-    background: var(--white);
+/* Animación del Icono hamburquesa */
+.header__spanhambline::before,
+.header__spanhambline::after {
+    background: var(--primario-hueso);
     content: '';
     display: block;
     height: 100%;
@@ -139,88 +143,89 @@ ul {
     width: 100%;
 }
 
-.hamb-line::before {
+.header__spanhambline::before {
     top: 5px;
 }
 
-.hamb-line::after {
+.header__spanhambline::after {
     top: -5px;
 }
 
-.side-menu {
+/* No se muestra el input */
+.header__inputhamb {
     display: none;
 }
 
-/* Hide checkbox */
-
-/* Toggle menu icon */
-.side-menu:checked~nav {
+/* Mostrar/Ocultar Menú nav*/
+.header__inputhamb:checked~.header__nav {
     max-height: 100%;
 }
 
-.side-menu:checked~.hamb .hamb-line {
+.header__inputhamb:checked~.header__labelhamb .header__spanhambline {
     background: transparent;
 }
 
-.side-menu:checked~.hamb .hamb-line::before {
+.header__inputhamb:checked~.header__labelhamb .header__spanhambline::before {
     transform: rotate(-45deg);
     top: 0;
 }
 
-.side-menu:checked~.hamb .hamb-line::after {
+.header__inputhamb:checked~.header__labelhamb .header__spanhambline::after {
     transform: rotate(45deg);
     top: 0;
 }
 
-.reserva__btn {
-    color: #3A758C;
-    font-weight: bolder;
-}
+/* Cuando el ancho de la ventana sea igual o mayor que 900px */
+@media (min-width: 900px) {
 
-/* Responsives */
-@media (min-width: 1050px) {
-    .nav {
+    /* Responsive Header */
+    .header__nav {
         max-height: none;
         top: 0;
         position: relative;
         float: right;
         width: fit-content;
-        background-color: transparent;
     }
 
-    .menu li {
+    .header__litem {
         float: left;
     }
 
-    .menu a:hover {
-        background-color: transparent;
-        color: var(--gray);
-
+    .header__alink {
+        color: var(--primario-hueso);
     }
 
-    .hamb {
+    .header__alink:hover {
+        color: var(--secundario-gris);
+        background-color: transparent;
+    }
+
+    .header__labelhamb {
         display: none;
     }
 }
 
-.reserva__btn {
-    color: #3A758C;
-    font-weight: bolder;
+.header__alink--reserva {
+    color: var(--resaltado-naranja);
+    font-weight: bold;
+}
+
+.header__alink--reserva:hover {
+    color: var(--resaltado-rojo);
 }
 
 /* _________________MAIN____________________ */
 /* Banner */
 .section {
-    width: 100%;
-    height: fit-content;
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
     display: flex;
     justify-content: center;
-    background-color: #effff8;
 }
 
-.divbanner__content {
-    background: url(../img/banner1.jpg);
-    background-color: rgba(0, 0, 0, 1);
+.sectionbanner__divcontdor {
+    background: url(../img/banner.jpg);
     background-size: cover;
     height: 100vh;
     min-width: 100%;
@@ -231,39 +236,78 @@ ul {
     padding: 10%;
 }
 
-.banner {
-    background: url(../img/banner1.jpg);
-    background-size: cover;
-    height: 100vh;
-    background-position: center;
-}
-
-
-.divbanner__divcontent--text {
+.sectionbanner__divtexto {
     width: 70%;
-    height: 60vh;
-    text-align: right;
-    color: #f2f2f2;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--secundario-gris-claro);
     border-radius: 20px;
     background: rgba(5, 2, 78, 0.3);
     padding: 5%;
 }
 
-.divbanner__divcontent--text h2 {
+.sectionbanner__h1titulo {
     font-size: 2.5em;
 }
 
-.divbanner__divcontent--text p {
+.sectionbanner__parrafo {
     margin-top: 2%;
     font-size: 1.8em;
 }
 
-.divbanner__divcontent--text li {
-
-    color: white;
+.sectionbanner__divbtn {
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px;
+    margin-bottom: 20px;
 }
 
-.section__divservices {
+.sectionbanner__aleermas {
+    margin-top: 2%;
+    padding: 10px 30px;
+    background-color: transparent;
+    cursor: pointer;
+    border: 3px solid var(--primario-azul-claro);
+    font-weight: bold;
+    color: #fff;
+    transition: 0.5s ease-in-out;
+    border-radius: 10px;
+}
+
+.sectionbanner__aleermas:hover {
+    background-color: var(--primario-azul-claro);
+    color: var(--primario-azul-oscuro);
+    font-weight: bold;
+}
+
+/* Whatsap */
+.sectionbanner__divwsp {
+    /* flotante */
+    position: fixed;
+    bottom: 10%;
+    right: 5%;
+    text-align: center;
+}
+
+.sectionbanner__imgwsp {
+    width: 60px;
+    height: 60px;
+}
+
+.sectionbanner__spanumero {
+    font-weight: bold;
+    color: white;
+    background-color: #4bc759;
+    padding: 0 4px;
+    border: solid 4px white;
+    border-radius: 0.75vw;
+    box-shadow: 1px 2px 0px #BFC8D0;
+}
+
+/* _______Nuestros Servicios______ */
+
+.sectionservicios__divcontdor {
     width: 80%;
     height: 100%;
     margin-top: -4rem;
@@ -272,11 +316,11 @@ ul {
     justify-content: center;
     border-radius: 20px;
     overflow: hidden;
-    background-color: #262f40;
-    box-shadow: 0 0 10px #000;
+    background-color: var(--primario-azul-oscuro);
+    box-shadow: 0 0 10px black;
 }
 
-.image__divcontainer {
+.sectionservicios__divfoto {
     width: 50%;
     height: auto;
     display: flex;
@@ -284,12 +328,7 @@ ul {
     align-items: center;
 }
 
-.imagen_telefono {
-    width: 30px;
-    height: 30px;
-}
-
-.service__divinfo_container {
+.sectionservicios__divespec {
     width: 45%;
     height: auto;
     padding: 1rem;
@@ -298,98 +337,75 @@ ul {
     justify-content: center;
     gap: 1rem;
     align-items: start;
-    color: #c4e1f2;
+    color: var(--primario-azul-claro);
 }
 
-.main__section-ul {
-    gap: 0.3rem;
-    list-style: none;
-}
-
-.service__divinfo_container>h2 {
+.sectionservicios__h2titulo {
     margin-bottom: 2rem;
 }
 
-.main__section-image {
+.sectionservicios__imgfoto {
     width: 85%;
     height: 85%;
     object-fit: cover;
 }
 
-.main__section-ul-li {
+.sectionservicios__litem {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
 }
 
-.div__container_li {
+.sectionservicios__divicono {
     display: flex;
     align-items: center;
     gap: 5px;
     margin-bottom: 20px;
 }
 
-.div__container_li a {
-    color: #fff;
-    text-decoration: none;
-}
-
-.icon__service-img {
+.sectionservicios__imgicono {
     width: 50px;
     height: 50px;
-    fill: #fff;
+    fill: white;
     padding: 7px;
-    border: 1px solid #f2f2f2;
+    border: 1px solid var(--secundario-gris-claro);
     border-radius: 50%;
 }
 
-.btn__mas_info {
+.sectionservicios__aleermas {
     padding: 10px 30px;
     background-color: transparent;
     cursor: pointer;
-    border: 2px solid #c4e1f2;
-    color: #c4e1f2;
+    border: 2px solid var(--primario-azul-claro);
+    color: var(--primario-azul-claro);
     transition: 0.5s ease-in-out;
     border-radius: 10px;
 }
 
-.btn__mas_info:hover {
-    background-color: #c4e1f2;
-    color: #262f40;
+.sectionservicios__aleermas:hover {
+    background-color: var(--primario-azul-claro);
+    color: var(--primario-azul-oscuro);
 }
 
-
-/* _________________NOSOTROS____________________ */
-
-.section__nosotros {
+/* _________________EQUIPO____________________ */
+.sectionequipo__divcontdor {
     width: 100%;
-    margin: 2rem;
-    text-align: center;
-}
-
-.section__nosotros>h2 {
-    font-size: 27px;
-    color: #262f40;
-}
-
-.section__divcards {
     margin-top: 3rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    background-color: #effff8;
     padding: 30px;
-    border: 5px solid #262f40;
-    border-radius: 20px;
+    border: 5px solid var(--primario-azul-oscuro);
+    border-radius: 10px;
 }
 
-.divdoctors__card {
-    width: 280px;
+.sectionequipo__divcard {
+    width: 270px;
     height: 450px;
-    background-color: #C5D1D9;
-    color: #262f40;
+    background-color: var(--secundario-gris-oscuro);
+    color: var(--primario-azul-oscuro);
     border-radius: 10px;
     overflow: hidden;
     display: flex;
@@ -398,39 +414,38 @@ ul {
     transition: 0.3s ease-in;
 }
 
-.divdoctors__card:hover {
+.sectionequipo__divcard:hover {
     transform: scale(1.05);
 }
 
-.container__imagen {
+.sectionequipo__divfoto {
     width: 100%;
     height: 80%;
     overflow: hidden;
     padding: 35px;
 }
 
-.main__doctor-image {
+.sectionequipo__imgfoto {
     width: 100%;
     object-fit: cover;
 }
 
-.contenido__doctor {
+.sectionequipo__divdoctor {
     height: 35%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: top;
     margin-top: 25px;
-    color: #262f40;
+    color: var(--primario-azul-oscuro);
     gap: 0.5rem;
     font-size: 18px;
 }
 
-/* Nosotros divcard */
-.nosotros_divcard {
-    width: 280px;
+/* EQUIPO card */
+.sectionequipo__divpresen {
+    width: 270px;
     height: 450px;
-    background-color: #effff8;
     overflow: hidden;
     display: flex;
     flex-wrap: wrap;
@@ -438,57 +453,57 @@ ul {
     align-items: center;
 }
 
-.nosotros_divenunciado {
+.sectionequipo__divintro {
     width: 100%;
     height: 40%;
     font-size: 48px;
-    color: #262f40;
-    font-weight: bolder;
+    color: var(--primario-azul-oscuro);
+    font-weight: bold;
     display: flex;
     flex-wrap: wrap;
 }
 
-.container_texto_nosotros {
+.sectionequipo__htitulo {
     height: 60%;
-    color: #262f40;
+    color: var(--primario-azul-oscuro);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
 }
 
-.texto__sobre_nosotros {
-    color: #262f40;
+.sectionequipo__pdescripcion {
+    color: var(--primario-azul-oscuro);
     padding: 10px;
     line-height: 1.5;
-    font-weight: bolder;
+    font-weight: bold;
     font-size: 18px;
 }
 
-.link__sobre_nosotros {
+.sectionequipo__alink {
     padding: 8px 15px;
-    border: 2px solid #262f40;
+    border: 2px solid var(--primario-azul-oscuro);
     background-color: transparent;
-    color: #262f40;
+    color: var(--primario-azul-oscuro);
     transition: .2s ease-in;
-    font-weight: bolder;
+    font-weight: bold;
     border-radius: 10px;
     width: 80%;
     cursor: pointer;
 }
 
-.link__sobre_nosotros:hover {
-    color: #C5D1D9;
-    border: 2px solid #262f40;
-    background-color: #262f40;
+.sectionequipo__alink:hover {
+    color: var(--secundario-gris-oscuro);
+    border: 2px solid var(--primario-azul-oscuro);
+    background-color: var(--primario-azul-oscuro);
 }
 
-/*____________________DEJANOS_EL_TELEFONO__________________________*/
-.dejanos__numero_container {
-    background-color: #3A758C;
+/* DEJANOS EL TELEFONO_*/
+.seccioncontacto__divcontdor {
+    background-color: var(--primario-azul-petroleo);
     width: 100%;
     height: 250px;
-    margin-top: 4rem;
+    margin-top: 3rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -496,63 +511,66 @@ ul {
     gap: 1rem;
 }
 
-.contenido__dejanosnumero {
+.seccioncontacto__divtexto {
     text-align: center;
 }
 
-.contenido__dejanosnumero>p {
+.seccioncontacto__ptelefono {
     font-size: 20px;
-    color: #C4E1F2;
+    color: var(--primario-azul-claro);
     margin-bottom: 0.5rem;
 }
 
-.contenido__dejanosnumero>h3 {
-    color: #262F40;
+.seccioncontacto__h3llamamos {
+    color: var(--primario-azul-oscuro);
     font-size: 30px;
 }
 
-.formulario__numerotelefono {
+.seccioncontacto__formtelef {
     display: flex;
     gap: 0.4rem;
 }
 
-.formulario__numerotelefono>input {
+.seccioncontacto__inputelef {
     padding: 10px 15px;
     font-size: 20px;
     border-radius: 5px;
-    background-color: #c4e1f2;
+    background-color: var(--primario-azul-claro);
 }
 
-.formulario__numerotelefono>input:focus {
+.seccioncontacto__inputelef:focus {
     outline: none;
 }
 
-.formulario__numerotelefono>button {
+.seccioncontacto__btntelef {
     padding: 10px 15px;
     border-radius: 5px;
-    background-color: #262F40;
-    color: #c4e1f2;
+    background-color: var(--primario-azul-oscuro);
+    color: var(--primario-azul-claro);
     font-size: 20px;
 }
 
+.seccioncontacto__btntelef:hover {
+    cursor: pointer;
+}
 
 /*___________________ESTILOS_MODAL________________________*/
-
-.modal__overlay {
+.header__divcontdorform {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.7);
+    /* Transparencia para efecto superponer */
     display: flex;
     align-items: center;
     justify-content: center;
     display: none;
 }
 
-.modal {
-    background-color: #262F40;
+.header__divformulario {
+    background-color: var(--primario-azul-oscuro);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -560,41 +578,40 @@ ul {
     width: 600px;
     height: 80%;
     max-height: 600px;
-    margin-top: 100px;
+    margin: 100px 0 0;
     position: relative;
 }
 
-.close__btn {
+.header__btncerrar {
     background: none;
     border: none;
     cursor: pointer;
     position: absolute;
     top: 0;
     right: 0;
-    margin-top: 10px;
-    margin: 10px;
+    margin: 10px 0 0;
 }
 
-.close__btn img {
+.header__imgbtncerrar {
     width: 24px;
     height: 24px;
 }
 
-.formulario__datoscliente {
+.header__formcita {
     display: flex;
     width: 100%;
     flex-direction: column;
     align-items: start;
     padding: 30px;
     gap: 10px;
-    color: #f2f2f2;
+    color: var(--secundario-gris-claro);
 }
 
-.formulario__datoscliente>h3 {
+.header__h3titulo {
     font-size: 28px;
 }
 
-.input__form {
+.header__divdatosformulario {
     display: flex;
     width: 100%;
     flex-direction: column;
@@ -603,113 +620,98 @@ ul {
     display: inline-block;
 }
 
-
-.input__form>input {
+.header__inputnombre {
     width: 100%;
     padding: 10px 10px;
-    border: 2px solid #f2f2f2;
+    border: 2px solid var(--secundario-gris-claro);
     border-radius: 10px;
-    margin-top: 3px;
-    color: #f2f2f2;
+    margin: 3px 0 0;
+    color: var(--secundario-gris-claro);
     background-color: transparent;
 }
 
-.input__form>input:focus {
+.header__inputnombre:focus {
     outline: none;
 }
 
-.btn__formulario {
-    width: 100%;
+.header__btnformulario {
+    /* width: 100%; */
     padding: 10px;
-    background-color: #3A758C;
-    color: #C5D1D9;
+    background-color: var(--primario-azul-petroleo);
+    color: var(--secundario-gris-oscuro);
     font-size: 18px;
-    font-weight: bolder;
+    font-weight: bold;
     border-radius: 10px;
     margin-top: 20px;
+    cursor: pointer;
 }
 
 /*___________________FOOTER_______________________*/
-.section__footer {
-    background-color: #262F40;
-    height: 300px;
+.footer {
+    background-color: var(--primario-azul-oscuro);
     width: 100%;
+    margin: 3px 0 0;
+}
+
+.footer__divcontdor {
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
-    margin-top: 2rem;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: 0 auto;
 }
 
-.section__footer>p {
-    text-align: center;
-    color: #3A758C;
-    padding-top: 10px;
-    padding-bottom: 20px;
-}
-
-.columns__container {
+.footer__divlogo {
+    margin: 1rem 0 0;
     display: flex;
-    height: 100%;
-    gap: 7rem;
-    justify-content: center;
-}
-
-.column__logo {
-    width: 200px;
     justify-content: center;
     align-items: center;
-    height: 100%;
 }
 
-.column__logo>img {
-    margin-top: 40px;
-    width: 200px;
-    height: 200px;
-    object-fit: contain;
-}
-
-.column__contacto_info {
-    color: #c4e1f2;
+.footer__divcontacto {
+    color: var(--primario-azul-claro);
     display: flex;
     flex-direction: column;
     gap: 10px;
     justify-content: center;
 }
 
-.column__social_network {
+.footer__divredes {
     display: flex;
+    justify-content: center;
     gap: 10px;
-    justify-content: start;
 }
 
-.column__social_network>img {
+.footer__imgred {
     width: 20px;
     height: 20px;
 }
 
-.column__mapa {
-    margin-top: 30px;
-    width: 300px;
-    height: 220px;
+.footer__divmapa {
+    margin: 1rem 0 0;
     border-radius: 20px;
     overflow: hidden;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
-.column__mapa>img {
+.footer__imgmapa {
     width: 100%;
-    object-fit: cover;
     height: 100%;
 }
 
-/* _________________MEDIA______________________ */
+.footer__pderechos {
+    text-align: center;
+    color: var(--primario-azul-petroleo);
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
 
-@media(max-width:768px) {
-    .header__divsearchbotton {
-        position: absolute;
-    }
-
+/* Responsive Servicios y Footer Mobile*/
+/* _________________Media______________________ */
+@media(max-width: 1050px) {
     .header__ul {
         position: fixed;
         top: 100px;
@@ -722,86 +724,39 @@ ul {
         transition: right 0.5s linear;
     }
 
-    .header__divmenuburger {
-        display: block;
-        width: 100px;
-        text-align: center;
-    }
-
-    .section__divservices {
+    .sectionservicios__divcontdor {
         width: 90%;
         height: fit-content;
-        margin-top: -2rem;
+        margin: -2rem 0 0 ;
         display: flex;
         flex-direction: column;
     }
 
-    .image__divcontainer {
+    .sectionservicios__divfoto {
         margin: 0 auto;
         padding-top: 1.5rem;
         width: 100%;
     }
 
-    .service__divinfo_container {
+    .sectionservicios__divespec {
         width: 100%;
         display: block;
         height: 100%;
         padding: 1rem 2rem;
     }
 
-    .main__section-ul {
-        width: 100%;
-        font-size: auto;
-    }
-
-    .section__footer {
-        height: auto;
+    /* Footer Media */
+    .footer__divcontdor {
         flex-direction: column;
         align-items: center;
-    }
-
-    .columns__container {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-    }
-
-    .column__logo {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 0;
-        margin: 0;
-    }
-
-    .column__logo>img {
-        margin-top: 20px;
-        width: 150px;
-        height: 150px;
-    }
-
-    .column__contacto_info {
         text-align: center;
     }
 
-    .column__social_network {
-        justify-content: center;
+    .footer__divlogo {
+        display: none;
     }
 
-    .column__social_network>img {
-        width: 15px;
-        height: 15px;
+    .footer__divcontacto {
+        margin: 1rem 0 0;
     }
-
-    .column__mapa {
-        margin-top: 20px;
-        width: 100%;
-        height: 150px;
-    }
-
-    #checkboxburger:checked~ul {
-        right: 0;
-    }
-
 }

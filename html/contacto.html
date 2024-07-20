@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CEMA </title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/contacto.css">
+</head>
+
+<body>
+
+    <!-- ______________________________________ENCABEZADO______________________________________ -->
+    <!-- ENCABEZADO Y MENU -->
+    <header class="header">
+        <div class="header__divheader">
+
+            <!-- Logo -->
+            <a href="index.html">
+                <img class="header__imglogo" src="../img/logo_blanco.svg" alt="Logo de CEMA">
+            </a>
+
+            <!-- Icono Hamburguesa  -->
+            <input class="header__inputhamb" type="checkbox" id="idhambside" />
+            <label class="header__labelhamb" for="idhambside"><span class="header__spanhambline"></span></label>
+
+            <!-- Barra de navegación  -->
+            <nav class="header__nav">
+                <ul class="header__ulista">
+                    <li class="header__litem"><a class="header__alink" href="../index.html">INICIO</a></li>
+                    <li class="header__litem"><a class="header__alink" href="servicios.html">SERVICIOS</a> </li>
+                    <li class="header__litem"><a class="header__alink" href="nosotros.html">NOSOTROS</a></li>
+                    <li class="header__litem"><a class="header__alink" href="contacto.html">CONTACTO</a></li>
+                    <li class="header__litem header__litem--reserva"><a class="header__alink header__alink--reserva"
+                            href="#" onclick="abrirModal()">RESERVA YA!</a></li>
+                </ul>
+            </nav>
+
+            <!-- Formulario de Cita (Tipo Modal: definido en CSS/ position: fixed)-->
+            <div class="header__divcontdorform" id="modalOverlay"> <!-- Oscurecer div detrás del Modal-->
+                <div class="header__divformulario">
+                    <form class="header__formcita">
+                        <h3 class="header__h3titulo">Formulario de cita</h3>
+                        <div class="header__divdatosformulario">
+                            <label for="idnombre">Nombre*</label>
+                            <input class="header__inputnombre" type="text" id="idnombre" placeholder="Nombre">
+                        </div>
+                        <div class="header__divdatosformulario">
+                            <label for="idapellidos">Apellidos*</label>
+                            <input class="header__inputnombre" type="text" id="idapellidos" placeholder="Apellidos">
+                        </div>
+                        <div class="header__divdatosformulario">
+                            <label for="idcorreo">Email*</label>
+                            <input class="header__inputnombre" type="email" id="idcorreo"
+                                placeholder="example@email.com">
+                        </div>
+                        <button class="header__btnformulario" type="button" onclick="enviarFormulario()">Solicitar
+                            cita</button>
+                    </form>
+                    <button class="header__btncerrar" onclick="cerrarModal()"><img class="header__imgbtncerrar"
+                            src="img/icon_cerrar_modal.svg" alt="Cerrar formulario"></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- __________________________________________MAIN________________________________________ -->
+    <!-- Banner -->
+    <main>
+        <section>
+            <div class="sectionencabezado__divcontdor">
+                <h2 class="sectionencabezado__h2titulo">CONTACTO</h2>
+            </div>
+
+        </section>
+        <!-- Servicios ----------------------------------------->
+        <!-- Formulario de Cita (Tipo Modal: definido en CSS/ position: fixed)-->
+        <section class="section">
+
+            <body>
+                <div class="contacto__divformulario">
+                    <form class="contacto__formcontacto">
+                        <h3 class="contacto__h3titulo">Formulario de contacto</h3>
+                        <div class="contacto__divdatosformulario">
+                            <label for="idnombre">Nombre*</label>
+                            <input class="contacto__inputnombre" type="text" id="idnombre" placeholder="Nombre">
+                        </div>
+                        <div class="contacto__divdatosformulario">
+                            <label for="idapellidos">Apellidos*</label>
+                            <input class="contacto__inputnombre" type="text" id="idapellidos" placeholder="Apellidos"
+                                required>
+                        </div>
+                        <div class="contacto__divdatosformulario">
+                            <label for="idcorreo">Email*</label>
+                            <input class="contacto__inputnombre" type="email" id="idcorreo"
+                                placeholder="example@email.com">
+                        </div>
+                        <div class="contacto__divdatosformulario">
+                            <label for="idcomentarios">Comentarios</label>
+                            <textarea class="contacto__inputnombre" id="idcomentarios"
+                                placeholder="Escribe tus comentarios aquí..." rows="4"></textarea>
+                            <button class="header__btnformulario" type="button" onclick="contactoEmpresa()">Solicitar
+                                cita</button>
+                        </div>
+                    </form>
+
+                </div>
+            </body>
+            <!-- Whatssapp -->
+            <div class="sectionbanner__divwsp">
+                <span class="sectionbanner__spanumero">654 777 876</span>
+                <img class="sectionbanner__imgwsp" src="../img/icon_whatsapp.svg" alt="">
+            </div>
+        </section>
+
+
+        <!-- Dejanos el telefono ----------------------------------------->
+        <section class="seccioncontacto__divcontdor">
+            <div class="seccioncontacto__divtexto">
+                <p class="seccioncontacto__ptelefono">Déjanos tu teléfono</p>
+                <h3 class="seccioncontacto__h3llamamos">¿Quieres que te llamemos?</h3>
+            </div>
+
+            <div class="seccioncontacto__divformulario">
+                <form class="seccioncontacto__formtelefono" action="">
+                    <input class="seccioncontacto__inputelef" type="text" placeholder="Teléfono">
+                    <button class="seccioncontacto__btntelef" type="submit" onclick="enviarTelefono()">Llámame</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- __________________________________________FOOTER________________________________________ -->
+    <footer class="footer">
+        <div class="footer__divcontdor">
+            <div class="footer__divlogo">
+                <a href="../index.html">
+                    <!-- estilo del logo del header -->
+                    <img class="header__imglogo" src="../img/logo_blanco.svg" alt="Logo de CEMA">
+                </a>
+            </div>
+            <div class="footer__divcontacto">
+                <h2>Información de contacto:</h2>
+                <p>Teléfono: +34 654 777 876</p>
+                <p>Email: cema@email.com</p>
+                <p>Dirección: C. Monte Tabor, 10, Sevilla, España</p>
+                <h2>Encuéntranos en:</h2>
+                <div class="footer__divredes">
+                    <img class="footer__imgred" src="../img/icon_facebook.svg" alt="Icono Facebook">
+                    <img class="footer__imgred" src="../img/icon_instagram.svg" alt="Icono Instagram">
+                    <img class="footer__imgred" src="../img/icon_twitter.svg" alt="Icono Twitter">
+                </div>
+            </div>
+            <div class="footer__divmapa">
+                <img class="footer__imgmapa" src="../img/mapa.jpg" alt="Mapa de ubicación de CEMA">
+            </div>
+        </div>
+        <p class="footer__pderechos">&copy; 2024 Clínica Dental CEMA. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/slider.js"></script>
+
+</body>
+
+</html>
